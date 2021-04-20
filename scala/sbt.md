@@ -1,40 +1,61 @@
 
 # sbt
 
-sbt 
+- scala building tool
 
-scala building tool
+## dir
 
-ScalaTest
+- sbt directory structure
 
+    - sbtmkdirs
 
-sbt director structure
+    - find .
 
-mkdir HelloWorld
-cd HelloWorld
-mkdir -p src/{main,test}/{java,resources,scala}
+    - tree .
+
+```
+mkdir testapp
+cd testapp
+touch build.sbt
+mkdir -p src/{main,test}/{java,scala,resources}
 mkdir project target
-
-find .
-tree .
-
-sbtmkdirs
-
-sbt new
+```
 
 
-sbt run
 
-sbt test
+## sbt cmd
 
-sbt
 
-run
+- sbt new
 
-test
+    
+- sbt run
 
-help
 
-exit
+- sbt test
 
-test
+
+- sbt package
+
+
+## sbt tasks
+
+- run 
+
+- test
+
+- compile 
+
+- package
+
+- clean
+
+- help
+
+- exit
+
+
+## test
+
+- ScalaTest
+
