@@ -1,3 +1,4 @@
 scala/testapp/target/
 scala/testapp/project/target/
 .vscode/
+.metals/
