@@ -1,2 +1,3 @@
 scala/testapp/target/
-scala/testapp/project/
+scala/testapp/project/target/
+.vscode/
