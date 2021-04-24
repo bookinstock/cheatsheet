@@ -26,6 +26,42 @@
 - Concurrency with Futures
 - More …
 
+### collection
+
+0 to 10 by 2
+
+1 to 2 contains 2
+
+
+### for
+
+for e <- seq {}
+
+for e <- seq if xx {}
+
+for e <- seq yield {}
+
+foreach 
+
+map
+
+filter
+
+
+### pattern match
+
+def fn(x: Any): String = x match {
+    case 1 =>  "one"
+    case 2 | 3 => "two or three"
+    case v if v < 5 => "four"
+    case v: String => s"str $v"
+    case _  => "?"
+}
+
+
+
+
+
 ### future
 
 - You construct futures to run tasks off of the main thread

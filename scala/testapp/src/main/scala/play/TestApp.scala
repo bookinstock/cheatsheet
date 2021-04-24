@@ -1,17 +1,10 @@
 package play
 
-
 // import play.TestFuture
-
 
 object TestApp extends App {
 
-    TestBasic.test()
+  TestBasic.test()
 
-    // TestFuture.test_future()
+  // TestFuture.test_future()
 }
-
-
-
-
-
