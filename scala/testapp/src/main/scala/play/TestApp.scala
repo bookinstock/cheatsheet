@@ -6,8 +6,9 @@ package play
 
 object TestApp extends App {
 
+    TestBasic.test()
 
-    TestFuture.test_future()
+    // TestFuture.test_future()
 }
 
 
