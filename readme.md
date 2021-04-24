@@ -13,6 +13,18 @@
 
 
 
+- Strings and built-in numeric types
+- Packaging and imports
+- How to use Java collections classes in Scala
+- How to use Java libraries in Scala
+- How to build Scala projects
+- How to perform unit testing in Scala
+- How to write Scala shell scripts
+- Maps, Sets, and other collections classes
+- Object-oriented programming
+- Functional programming
+- Concurrency with Futures
+- More …
 
 ### future
 

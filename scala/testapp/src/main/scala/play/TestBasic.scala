@@ -1,7 +1,5 @@
 
 
-
-
 package play
 
 
@@ -12,6 +10,9 @@ object TestBasic {
         test_control_flow()
         test_exception()
         test_for()
+        test_trait()
+        test_collection()
+        test_tuple()
     }
 
     def test_varialbe() = {
@@ -73,6 +74,69 @@ object TestBasic {
         println("lst2=", lst2)
         println("lst3=", lst3)
         println("lst4=", lst4)
+    }
+
+    def test_trait() =  {
+        trait A  {
+            def a(): Int
+        }
+
+        trait B {
+            def b(): Int = 2
+        }
+
+        class C extends A with B {
+            override def a(): Int = 1
+        }
+
+        val c = new C
+
+        println(c.a)
+        println(c.b)
+    }
+
+
+    def test_collection() = {
+        // list
+        val lst = List.range(0, 5)
+
+        println("lst=", lst)
+
+        val lst2 = (0 to 5 by 2).toList
+
+        println("lst2=", lst2)
+
+        println("--1")
+
+        lst.map(_* 2).filter(_ < 5).foreach(println)
+
+        println("--2")
+
+        val sum = lst.foldLeft(0)(_ + _)
+
+        println("sum=", sum)
+
+        // vector
+
+        val vec = Vector.range(0, 5)
+
+        println("vec=", vec)
+
+        // map
+
+        // set
+    }
+
+    def test_tuple() = {
+        val t = (1, 1.0, "1", true)
+
+        println("t=", t)
+
+        println(t._1, t._2)
+
+        val (a,b,c,d) = t
+
+        println( a,b,c,d)
     }
 
     def _get_type(value: Any):String = value match {

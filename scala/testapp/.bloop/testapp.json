@@ -1,0 +1,148 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "testapp",
+        "directory": "/Users/wendelu/Workspace/cheatsheet/scala/testapp",
+        "workspaceDir": "/Users/wendelu/Workspace/cheatsheet/scala/testapp",
+        "sources": [
+            "/Users/wendelu/Workspace/cheatsheet/scala/testapp/src/main/scala-2.12",
+            "/Users/wendelu/Workspace/cheatsheet/scala/testapp/src/main/scala",
+            "/Users/wendelu/Workspace/cheatsheet/scala/testapp/src/main/java",
+            "/Users/wendelu/Workspace/cheatsheet/scala/testapp/target/scala-2.12/src_managed/main"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-library.jar"
+        ],
+        "out": "/Users/wendelu/Workspace/cheatsheet/scala/testapp/.bloop/testapp",
+        "classesDir": "/Users/wendelu/Workspace/cheatsheet/scala/testapp/.bloop/testapp/scala-2.12/classes",
+        "resources": [
+            "/Users/wendelu/Workspace/cheatsheet/scala/testapp/src/main/resources",
+            "/Users/wendelu/Workspace/cheatsheet/scala/testapp/target/scala-2.12/resource_managed/main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.10",
+            "options": [
+                
+            ],
+            "jars": [
+                "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-library.jar",
+                "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar",
+                "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/jline.jar",
+                "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar",
+                "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/jansi.jar",
+                "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar"
+            ],
+            "analysis": "/Users/wendelu/Workspace/cheatsheet/scala/testapp/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.12.zip",
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Users/wendelu/.sdkman/candidates/java/11.0.10.j9-adpt",
+                "options": [
+                    "-Duser.dir=/Users/wendelu/Workspace/cheatsheet/scala/testapp"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.10",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/wendelu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.10/scala-library-2.12.10-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.10",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/wendelu/.sbt/boot/scala-2.12.10/lib/scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/wendelu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.10/scala-library-2.12.10-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}
