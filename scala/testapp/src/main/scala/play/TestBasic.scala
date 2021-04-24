@@ -6,38 +6,40 @@ package play
 object TestBasic {
 
     def test() {
+        println("##basic")
         test_varialbe()
-        test_control_flow()
-        test_exception()
-        test_for()
-        test_trait()
-        test_collection()
-        test_tuple()
+        test_if_else()
+        test_pattern_match()
+        // test_exception()
+        // test_for()
+        // test_trait()
+        // test_collection()
+        // test_tuple()
     }
 
-    def test_varialbe() = {
+    def test_varialbe() {
+        println("###test_varialbe")
         val immut = 1
         var mut = 2
-
+        mut = 3
         println("immut=", immut, "mut=", mut)
 
         val user = new User(name="sam", age=18)
         println("user=", user)
     }
 
-    def test_control_flow() = {
-        val r1 = if (false) {
-            0
-        } else if (false) {
-            -1
-        } else {
-            1
-        }
-        println("r1=", r1)
+    def test_if_else() = {
+        println("###test_if_else")
+        val r = if (false) 1 else if (false) -1 else 0
+        println("r=", r)
 
         val (a,b) = (1,2)
-        val r2 = if (a > b) a else b
-        println("r2=", r2)
+        val max = if (a > b) a else b
+        println("max=", max)
+    }
+
+    def test_pattern_match() {
+        println("###test_pattern_match")
 
         val c = 3
         val r3 = c match {
@@ -47,6 +49,15 @@ object TestBasic {
             case _ => "?"
         }
         println("r3=", r3)
+
+        def _get_type(value: Any):String = value match {
+            case v: String => s"str ($v)"
+            case v: Integer => s"int ($v)"
+            case v: Float => s"float ($v)"
+            case v: List[_] => s"lst ($v)"
+            case v: User => s"user ($v)"
+            case _ => "?"
+        }
 
         val user = new User(name="sam", age=18)
         val r4 = _get_type(user)
@@ -64,16 +75,32 @@ object TestBasic {
 
     def test_for() {
         val lst0 = for (e <- List(1,2,3,4,5)) yield e
-        val lst1 = for (e <- 0 to 5) yield e
-        val lst2 = for (e <- 10 to 0 by -2) yield e
-        val lst3 = for (e <- 0 to 5) yield e * 2
-        val lst4 = for (e <- 0 to 10 if e % 2 == 0) yield e
+        val vec1 = for (e <- 0 to 5) yield e
+        val vec2 = for (e <- 10 to 0 by -2) yield e
+        val vec3 = for (e <- 0 to 5) yield e * 2
+        val vec4 = for (e <- 0 to 10 if e % 2 == 0) yield e
 
         println("lst0=", lst0)
-        println("lst1=", lst1)
-        println("lst2=", lst2)
-        println("lst3=", lst3)
-        println("lst4=", lst4)
+        println("vec1=", vec1)
+        println("vec2=", vec2)
+        println("vec3=", vec3)
+        println("vec4=", vec4)
+
+        val map = Map(
+            "a" -> 1,
+            "b" -> 2,
+            "c" -> 3
+        )
+
+        val x = for ((k, v) <- map) yield (k,v* 2)
+        println(x)
+
+        println("---")
+        val s = Seq(1,2,3,4,5)
+        println("aa")
+        for (e<- s) println(e)
+        println("bb")
+        s.foreach(println)
     }
 
     def test_trait() =  {
@@ -139,14 +166,7 @@ object TestBasic {
         println( a,b,c,d)
     }
 
-    def _get_type(value: Any):String = value match {
-        case v: String => s"str ($v)"
-        case v: Integer => s"int ($v)"
-        case v: Float => s"float ($v)"
-        case v: List[_] => s"lst ($v)"
-        case v: User => s"user ($v)"
-        case _ => "?"
-    }
+
 }
 
 class User(name: String, age: Integer) {
