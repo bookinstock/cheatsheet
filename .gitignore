@@ -1,4 +1,5 @@
 scala/testapp/target/
 scala/testapp/project/target/
+scala/testapp/.bloop/
 .vscode/
 .metals/
