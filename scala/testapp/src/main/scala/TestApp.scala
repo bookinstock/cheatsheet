@@ -6,38 +6,64 @@ import scala.util.{Failure, Success}
 
 object TestApp extends App {
     test_future()
-    
+
+
+
+    //
+
+    // future key points:
+    // - You construct futures to run tasks off of the main thread
+    // - Futures are intended for one-shot, potentially long-running concurrent tasks that eventually return a value
+    // - A future starts running as soon as you construct it
+    // - A benefit of futures over threads is that they come with a variety of callback methods that simplify the process of working with concurrent threads, including the handling of exceptions and thread management
+    // - Handle the result of a future with methods like onComplete, or combinator methods like map, flatMap, filter, andThen, etc.
+    // - The value in a Future is always an instance of one of the Try types: Success or Failure
+    // - If you’re using multiple futures to yield a single result, you’ll often want to combine them in a for-expression
 
     def test_future() = {
-        // test_future_simple()
+        // test_future_single()
         test_future_multi()
     }
 
-    def test_future_simple() = {
-        println("1")
+    def test_future_single() = {
+        println("start")
 
-        val a = Future { Thread.sleep(10*1000); 42 }
+        val a = Future {
+            Thread.sleep(5 * 1000)
+            3
+        }
 
         val b = a.map(_ * 2)
 
+        val c = b.map(_ * 2)
+
+        println("a=", a)
+        println("b=", b)
+
+        println("end")
 
         a.onComplete {
-            case Success(value) => println(s"Got the a callback, value = $value")
-            case Failure(e) => e.printStackTrace
+            case Success(data) => println(f"a success $data")
+            case Failure(e)=> e.printStackTrace
         }
 
         b.onComplete {
-            case Success(value) => println(s"Got the b callback, value = $value")
-            case Failure(e) => e.printStackTrace
+            case Success(data) => println(f"b success $data")
+            case Failure(e)=> e.printStackTrace
         }
 
+        // conComplete conSuccess onFailure
 
-        println("2")
+        // map,flatMap,filter,foreach
+
+        // andThen fallbackTo recoverWith
     }
 
     def test_future_multi() = {
         // use this to determine the “delta time” below
         val startTime = currentTime
+
+        println("starttime=",startTime)
 
         // (a) create three futures
         val aaplFuture = getStockPrice("AAPL")
@@ -51,12 +77,15 @@ object TestApp extends App {
             goog <- googFuture
         } yield (aapl, amzn, goog)
 
+        println("result=",result)
+
         // (c) do whatever you need to do with the results
         result.onComplete {
             case Success(x) => {
                 val totalTime = deltaTime(startTime)
                 println(s"In Success case, time delta: ${totalTime}")
                 println(s"The stock prices are: $x")
+                println("class=", x.getClass())
             }
             case Failure(e) => e.printStackTrace
         }
@@ -87,6 +116,8 @@ object TestApp extends App {
         
 
 }
+
+
 
 
 
